@@ -51,8 +51,8 @@ class VideoCamera(object):
         fps = 1/(self.ctime-self.ptime)
         self.ptime = self.ctime
         cv.circle(frame,self.position,20,(255,255,255),-1)
-        cv.putText(frame,f'count:-{str(int(self.count))}',(500,70),cv.FONT_HERSHEY_SIMPLEX,2,(255,0,255),3)
-        cv.putText(frame,f'FPS:-{str(int(fps))}',(30,70),cv.FONT_HERSHEY_SIMPLEX,2,(255,0,255),3)
+        cv.putText(frame,f'count:-{str(int(self.count))}',(500,70),cv.FONT_HERSHEY_SCRIPT_SIMPLEX,2,(255,0,255),3)
+        cv.putText(frame,f'FPS:-{str(int(fps))}',(30,70),cv.FONT_HERSHEY_SCRIPT_SIMPLEX,2,(255,0,255),3)
         ret, jpeg = cv.imencode('.jpg', frame)
         return jpeg.tobytes()
     
