@@ -55,16 +55,15 @@ class VideoCamera(object):
         self.ptime = self.ctime
 
         cv.circle(frame, self.position, 20, (255, 255, 255), -1)
-        cv.putText(frame, f'Count: {str(int(self.count))}', (500, 70), cv.FONT_HERSHEY_SCRIPT_SIMPLEX, 2, (255, 0, 255), 3)
+        cv.putText(frame, f'Count: {str(int(self.count))}', (700, 70), cv.FONT_HERSHEY_SCRIPT_SIMPLEX, 2, (255, 0, 255), 3)
         cv.putText(frame, f'FPS: {str(int(fps))}', (30, 70), cv.FONT_HERSHEY_SCRIPT_SIMPLEX, 2, (255, 0, 255), 3)
-
-        if time.time() - self.game_time >= 40:
-            self.video.release()
-
+      
         ret, jpeg = cv.imencode('.jpg', frame)
         if not ret:
             return None
         return jpeg.tobytes()
 
     def get_count(self):
-        return self.count
+        a = self.count
+        self.count = 0
+        return a
