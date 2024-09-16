@@ -46,7 +46,7 @@ class VideoCamera(object):
                 self.count += 1
                 self.position = self.get_random_position()
                 self.start_time = time.time()
-            if time.time() - self.start_time >= 3:
+            if time.time() - self.start_time >= 2:
                 self.position = self.get_random_position()
                 self.start_time = time.time()
 
